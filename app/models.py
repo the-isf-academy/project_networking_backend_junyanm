@@ -3,15 +3,18 @@
 from banjo.models import Model, StringField, IntegerField, FloatField, BooleanField
 
 class Swim_drill(Model):
+    drillname = StringField()
     distance = IntegerField()
     instructions = StringField()
     repetitions = IntegerField()
     difficulty = IntegerField()
+   
 
     def json_response(self):
         
         return {
             'id': self.id,
+            'drillname': self.drillname, 
             'instructions': self.instructions,
             'repetitions': self.repetitions,
             'difficulty': self.difficulty
