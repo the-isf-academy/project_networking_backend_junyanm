@@ -8,14 +8,14 @@ from settings import BASE_URL
 def all_drills(args):
     if Swim_drill.objects.exists():
         swimdrills_list = []
-        print(hi)
-        for Swim_drill in Swim_drill.objects.all():
-            swimdrills_list.append(Swim_drill.json_response())
+       
+        for swim_drill in Swim_drill.objects.all():
+            swimdrills_list.append(swim_drill.json_response())
 
         return {'Swim Drills': swimdrills_list}
      
     else:
-        print(hello)
+       
         return {'error': 'no drill exists'}
 
 
@@ -27,8 +27,19 @@ def new_drill(args):
         distance = args['distance'],
         repetitions = args['repetitions'],
         difficulty = args['difficulty']
-        
+
     )
 
     new_drill.save()
    
+    return {'swim_drill': new_drill.json_response()}
+
+
+@route_get(BASE_URL + 'one', args={'id':int})
+def one_drill(args):
+    if Swim_drill.objects.filter(id=args['id']).exists():
+        Swim_drill.object.get(id=args['id'])
+        
+        return {one_drill.json_response()}
+    else:
+         return {'error': 'no drill exists'}

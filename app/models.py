@@ -17,6 +17,7 @@ class Swim_drill(Model):
             'drillname': self.drillname, 
             'instructions': self.instructions,
             'repetitions': self.repetitions,
+            'distance': self.distance,
             'difficulty': self.difficulty
      
          }
