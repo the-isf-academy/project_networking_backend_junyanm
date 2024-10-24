@@ -8,7 +8,8 @@ class Swim_drill(Model):
     instructions = StringField()
     repetitions = IntegerField()
     difficulty = IntegerField()
-   
+    likes = IntegerField()
+    
 
     def json_response(self):
         
@@ -18,13 +19,17 @@ class Swim_drill(Model):
             'instructions': self.instructions,
             'repetitions': self.repetitions,
             'distance': self.distance,
-            'difficulty': self.difficulty
+            'difficulty': self.difficulty,
+            'likes': self.likes
+            
      
          }
 
+    def increase_likes(self):
+        self.likes += 1
+        self.save()
 
-
-
+    
 
 
 

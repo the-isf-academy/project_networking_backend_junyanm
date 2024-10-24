@@ -14,13 +14,16 @@ Swim_Drill : Stores swimming drills and other information about it such as the d
 
 *Replace this with a guide to your endpoints and model. You can write a Markdown chart [here](https://www.tablesgenerator.com/markdown_tables)*
 
-|Route Name     |Payload   	                                        |Description   	                              |   	
-|---------------|---------------------------------------------------|---------------------------------------------|
-|POST/new       |id, distance, instructions, repetitions, difficulty|Creates a new swim drill   	              |
-|POST/like   	|id                                                 |Likes a post and shows how many likes it has |
-|GET/difficulty |difficulty  	                                    |Returns all drills with the chosen difficulty|
-|GET/all   	    |N/A   	                                            |Returns all drills in the database           |   	
-|GET/one   	    |id  	                                            |Returns drill with the id selected           |   	
+|Route Name     |Payload   	                                        |Description   	                              |Example      |  	
+|---------------|---------------------------------------------------|---------------------------------------------|-------------|     
+|POST/new       |id, distance, instructions, repetitions, difficulty|Creates a new swim drill   	              |drillname: kicking, distance: 50, instructions: use a kickboard and kick|
+|POST/like   	|id                                                 |Likes a post and shows how many likes it has |id: 1        |
+|GET/difficulty |difficulty  	                                    |Returns all drills with the chosen difficulty|difficulty: 1|
+|GET/all   	    |N/A   	                                            |Returns all drills in the database           |N/A          |
+|GET/one   	    |id                                                 |Returns the drill with the same id           |id: 1        |
+
+
+
 
 
 
